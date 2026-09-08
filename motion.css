@@ -1,0 +1,18 @@
+.hero-copy{position:relative;isolation:isolate}
+.hero-copy>*:not(.flight-artwork){position:relative;z-index:1}
+.flight-artwork{position:absolute;inset:0 -12px;z-index:0;overflow:hidden;pointer-events:none;border-radius:30px;background:radial-gradient(ellipse at 85% 18%,#cbdaca44,transparent 55%)}
+.flight-artwork>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.flight-route{fill:none;stroke:#bf4f2e;stroke-width:1.3;stroke-dasharray:5 9;opacity:.18;animation:route-drift 28s linear infinite}
+.flight-origin,.flight-destination{fill:#bf4f2e;opacity:.17}
+.flying-aircraft{position:absolute;inset:0 auto auto 0;width:46px;height:46px;offset-path:path('M -60 430 C 40 500 170 430 200 330 S 220 170 330 130 S 520 145 650 15');offset-rotate:auto;animation:chosen-flight 20s linear infinite;opacity:.3;color:#365d4c;filter:drop-shadow(0 5px 3px #203d3312)}
+.flying-aircraft svg{width:100%;height:100%;fill:currentColor}
+@supports(offset-path:shape(from 0% 0%,line to 100% 100%)){.flying-aircraft{offset-path:shape(from -10% 83%,curve to 33% 63% with 7% 96% / 28% 83%,curve to 55% 25% with 37% 33% / 37% 33%,curve to 108% 3% with 87% 28% / 87% 28%)}}
+.flight-cloud{position:absolute;width:140px;height:35px;border-radius:50%;background:#d3dfd14d;filter:blur(16px);animation:cloud-drift 24s ease-in-out infinite alternate}
+.cloud-one{left:10%;top:18%}.cloud-two{right:5%;bottom:16%;animation-delay:-12s;width:200px}
+.slide-controls .carousel-pause{font-size:13px;background:#203d3366}
+.hero-photo>.outgoing-image{pointer-events:none}
+@keyframes chosen-flight{0%{offset-distance:0%;opacity:0}8%,87%{opacity:.3}100%{offset-distance:100%;opacity:0}}
+@keyframes route-drift{to{stroke-dashoffset:-140}}
+@keyframes cloud-drift{to{transform:translate(60px,-20px);opacity:.5}}
+@media(max-width:700px){.flight-artwork{inset:0 -10px}.flying-aircraft{width:36px;height:36px}.photo-bottom{gap:10px}.slide-controls{gap:6px}.slide-controls button{width:32px;height:32px;flex-shrink:0}.photo-bottom>span{max-width:45%;line-height:1.5}}
+@media(prefers-reduced-motion:reduce){.flight-artwork *{animation:none!important}.flying-aircraft{offset-distance:55%;opacity:.22}}
