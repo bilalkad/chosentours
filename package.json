@@ -1,0 +1,11 @@
+{
+  "name": "chosen-tours-travel",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
